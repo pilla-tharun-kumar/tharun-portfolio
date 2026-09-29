@@ -95,6 +95,63 @@
   .about-section{padding-block:100px}.about-inner{grid-template-columns:1fr;gap:52px}.about-copy{margin-top:40px}.about-aside{padding:30px}
   .contact-section{padding-block:95px 35px}.contact-layout{grid-template-columns:1fr;gap:40px}.contact-inner h2{font-size:clamp(55px,11vw,75px)}.contact-bottom{margin-top:100px;flex-direction:column;line-height:1.7}.socials{flex-wrap:wrap}.site-footer{padding:25px 20px}.footer-name{font-size:20vw;margin:25px 0}.footer-top,.footer-bottom{font-size:9px;line-height:1.6}
 }
+
+/* Fresh editorial system for every section below the hero. */
+.intro-section,.data-strip,.work-section,.experience-section,.about-section,.contact-section,.site-footer{font-family:'Sora','DM Sans',sans-serif}
+.intro-statement,.section-heading h2,.project-details h3,.experience-heading h2,.experience-entry h3,.about-main h2,.contact-inner h2{font-family:'Bodoni Moda','Playfair Display',serif}
+
+.intro-grid{grid-template-columns:.72fr 1.28fr;gap:6vw;align-items:end}
+.intro-statement{font-size:clamp(70px,8vw,130px);line-height:.86}
+.intro-aside{max-width:460px;justify-self:end;padding:32px 0 8px 36px}
+.intro-aside p{font-size:18px;line-height:1.9}
+
+.project-list{grid-template-columns:repeat(12,minmax(0,1fr));gap:20px}
+.project-card,.project-card:nth-child(even),.project-card:first-child{display:block;grid-template-columns:none;gap:0}
+.project-card:first-child{grid-column:span 7}
+.project-card:nth-child(2){grid-column:span 5}
+.project-card:nth-child(3){grid-column:1/-1;display:grid;grid-template-columns:.82fr 1.18fr;gap:42px;align-items:center}
+.project-card:nth-child(3) .project-visual{order:2}
+.project-card:nth-child(3) .project-details{order:1;padding-left:24px}
+.project-card:first-child .project-art,.project-card:nth-child(2) .project-art{height:390px}
+.project-card:nth-child(3) .project-art{height:360px}
+.project-card:first-child .project-details,.project-details{padding:27px 10px 8px}
+.project-details h3,.project-card:not(:first-child) .project-details h3{font-size:clamp(36px,3vw,52px);line-height:1.04}
+.project-index{font-family:'Sora',sans-serif;font-size:14px;letter-spacing:.18em;margin-bottom:27px}
+
+.experience-inner{grid-template-columns:1.15fr .85fr;gap:8vw;align-items:center}
+.experience-heading h2{font-size:clamp(62px,7vw,108px);line-height:.86}
+.experience-entry{padding:46px}
+
+.about-inner{grid-template-columns:1fr;gap:70px}
+.about-main{display:grid;grid-template-columns:.42fr .58fr;column-gap:7vw;align-items:start}
+.about-main .section-kicker{grid-column:1/-1}
+.about-main h2{font-size:clamp(65px,7.5vw,116px);line-height:.84;margin-bottom:0}
+.about-copy{margin-top:30px;grid-template-columns:1fr;align-self:end}
+.about-aside{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:0;box-shadow:none;background:transparent;border-color:rgba(37,60,67,.25)}
+.about-aside-title{grid-column:1/-1;padding:26px 30px;border-bottom:1px solid rgba(37,60,67,.2)}
+.skill-group{padding:30px;border-bottom:0;border-right:1px solid rgba(37,60,67,.2)}
+.skill-group:nth-of-type(3){border-right:0}
+.about-aside-foot{grid-column:1/-1;padding:23px 30px;border-top:1px solid rgba(37,60,67,.2)}
+
+.contact-layout{grid-template-columns:1.1fr .9fr}
+.contact-actions{display:grid;gap:12px}
+.copy-email{appearance:none;border:0;border-radius:100px;background:#dfba9e;color:#1a2d34;padding:15px 20px;font:700 12px 'Sora',sans-serif;letter-spacing:.08em;cursor:pointer;transition:transform .25s,background .25s}
+.copy-email:hover{transform:translateY(-2px);background:#f0d0b8}
+.copy-email:focus-visible{outline:2px solid white;outline-offset:4px}
+
+@media(max-width:900px){
+  .intro-grid{grid-template-columns:1fr}.intro-aside{justify-self:start;margin-top:0}
+  .project-card:first-child,.project-card:nth-child(2){grid-column:1/-1;display:grid;grid-template-columns:1.05fr .95fr;gap:28px}.project-card:nth-child(2) .project-visual{order:2}.project-card:nth-child(2) .project-details{order:1}
+  .about-main{grid-template-columns:1fr}.about-copy{grid-template-columns:1fr 1fr}.about-aside{grid-template-columns:1fr}
+  .skill-group,.skill-group:nth-of-type(3){border-right:0;border-bottom:1px solid rgba(37,60,67,.2)}
+}
+@media(max-width:720px){
+  .intro-grid{display:block}.intro-aside{padding:24px 0 0}.intro-statement{font-size:clamp(62px,18vw,88px)}
+  .project-list{display:block}.project-card:first-child,.project-card:nth-child(2),.project-card:nth-child(3){display:block;margin-bottom:18px}.project-card:nth-child(2) .project-visual,.project-card:nth-child(3) .project-visual,.project-card:nth-child(2) .project-details,.project-card:nth-child(3) .project-details{order:unset}.project-card:nth-child(3) .project-details{padding-left:10px}.project-card:first-child .project-art,.project-card:nth-child(2) .project-art,.project-card:nth-child(3) .project-art{height:315px}
+  .experience-inner{grid-template-columns:1fr}.experience-heading h2{font-size:clamp(62px,17vw,84px)}
+  .about-main{display:block}.about-main h2{font-size:clamp(62px,17vw,82px);margin-top:28px}.about-copy{grid-template-columns:1fr;margin-top:45px}.about-aside{display:block}.about-aside-title,.skill-group,.about-aside-foot{padding-inline:25px}
+  .contact-layout{grid-template-columns:1fr}.contact-actions{width:100%}.contact-email{width:100%}
+}
 @media(max-width:390px){.experience-topline{font-size:9px}.footer-name{font-size:19vw}}
 
 /* Second-pass layout and typography. The hero remains on its original type system. */
