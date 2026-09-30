@@ -23,6 +23,15 @@ const projects = [
 
 function App() {
   const [emailCopied, setEmailCopied] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => window.matchMedia('(max-width: 720px)').matches);
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia('(max-width: 720px)');
+    const syncVideoForViewport = (event) => setIsMobile(event.matches);
+    setIsMobile(mobileQuery.matches);
+    mobileQuery.addEventListener('change', syncVideoForViewport);
+    return () => mobileQuery.removeEventListener('change', syncVideoForViewport);
+  }, []);
 
   const copyEmail = async () => {
     const email = 'tharunkumarpilla@gmail.com';
@@ -62,7 +71,7 @@ function App() {
 
     <main id="top">
       <section className="hero" aria-labelledby="hero-title">
-        <video className="hero-video" autoPlay muted loop playsInline preload="metadata" aria-hidden="true"><source src="/hero-video.mp4" type="video/mp4" /></video>
+        <video className="hero-video" src={isMobile ? '/mobile.mp4' : '/hero-video.mp4'} autoPlay muted loop playsInline preload="metadata" aria-hidden="true" />
         <div className="hero-shade" aria-hidden="true" />
         <div className="hero-content">
           <div className="eyebrow hero-eyebrow"><span className="eyebrow-line" /> ASPIRING DATA ANALYST & ML PRACTITIONER</div>
